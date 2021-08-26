@@ -27,4 +27,17 @@ for (let i = 0; i < btnsShowModal.length; i++)
 // but we wanty to execute function when click happend
 
 btnCloseModal.addEventListener('click', closeModel);
-overlay.addEventListener('click', closeModel)
+overlay.addEventListener('click', closeModel);
+
+// keydown, keypress, keyup
+
+
+document.addEventListener('keydown', function (event) {
+    //console.log(event['key']);
+
+    if (event['key'] === 'Escape' && !modal.classList.contains('hidden')) {
+        
+        closeModel();
+        
+    }
+});  
