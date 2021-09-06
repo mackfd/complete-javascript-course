@@ -500,31 +500,58 @@ const game = {
 
 // task 1 
 
- for (let [key, value] of game.scored.entries()) {
-   console.log(`Goal ${key+1}: ${value}`);
- }
+//  for (let [key, value] of game.scored.entries()) {
+//    console.log(`Goal ${key+1}: ${value}`);
+//  }
 
- //taks 2
+//  //taks 2
 
- console.log(Object.values(game.odds));
+//  console.log(Object.values(game.odds));
 
- const odds = Object.values(game.odds);
+//  const odds = Object.values(game.odds);
 
 
- let avgOdd = 0;
- for (let odd of odds) avgOdd +=odd;
-avgOdd = avgOdd/odds.length
-console.log(avgOdd);
+//  let avgOdd = 0;
+//  for (let odd of odds) avgOdd +=odd;
+// avgOdd = avgOdd/odds.length
+// console.log(avgOdd);
  
-// task 3
-for (let [team, odd] of Object.entries(game.odds)){
-  const teamStr = team === 'x' ? 'draw' : game[team];
-  console.log(`Odd of victory ${teamStr}: ${odd}`)
-};
+// // task 3
+// for (let [team, odd] of Object.entries(game.odds)){
+//   const teamStr = team === 'x' ? 'draw' : game[team];
+//   console.log(`Odd of victory ${teamStr}: ${odd}`)
+// };
 
-// task 4 
-const scorers = {};
-for (const player of game.scored) {
-  scorers[player] ? scorers[player]++ : scorers[player] = 1 
-};
-console.log(scorers);
+// // task 4 
+// const scorers = {};
+// for (const player of game.scored) {
+//   scorers[player] ? scorers[player]++ : scorers[player] = 1 
+// };
+// console.log(scorers);
+
+// ===========================
+// 115. Sets. 
+// ===========================
+
+const orderSet = new Set(['Pasta','Pizza', 'Pizza','Pasta','Rizotto', 'Pizza']);
+
+console.log(orderSet);
+
+console.log(orderSet.size);
+console.log(orderSet.has('Bread'));
+orderSet.add('GarlicBread');
+orderSet.delete('Rizotto')
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+// Example 
+
+const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staff);
+console.log(staffUnique);
+console.log(new Set(['Waiter','Chef','Waiter','Manager','Chef','Waiter']).size);
+
+console.log(new Set('jonasschmedtmann').size);
+
